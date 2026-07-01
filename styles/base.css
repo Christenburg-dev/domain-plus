@@ -488,6 +488,123 @@ footer {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* Index navbar enforced across every page */
+body .site-header {
+  position: sticky !important;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 10px 0 !important;
+  color: #ffffff;
+  border-bottom: 1px solid var(--dp-line);
+  background: rgba(7, 11, 25, 0.9) !important;
+  box-shadow: 0 18px 48px rgba(2, 6, 23, 0.18);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+body .site-header .header-container {
+  width: min(100% - 32px, var(--dp-max));
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body .site-header .logo {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+body .site-header .logo img {
+  width: clamp(52px, 4vw, 58px);
+  height: clamp(38px, 3vw, 42px);
+  object-fit: contain;
+}
+
+body .site-header .logo-text {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  font-size: clamp(0.92rem, 1vw, 1rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+body .site-header .logo-subtext {
+  color: var(--dp-text-muted);
+  font-size: clamp(0.62rem, 0.72vw, 0.68rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+body .site-header .main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 26px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body .site-header .main-nav li {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+body .site-header .main-nav a {
+  color: #e5ecf8;
+  text-decoration: none;
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+body .site-header .main-nav a:hover,
+body .site-header .main-nav a[aria-current="page"] {
+  color: #ffffff;
+}
+
+body .site-header .header-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+body .site-header .nav-cta-desktop {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+body .site-header .mobile-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+}
+
 /* Landing-page hero consistency */
 .home-page .hero-section,
 .solution-page .hero-section,

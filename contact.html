@@ -89,99 +89,6 @@
             z-index: 1;
         }
 
-        /* Header Navigation */
-        .sticky-header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background: rgba(10, 14, 39, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
-            padding: 1rem 2rem;
-        }
-
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-            gap: 1rem;
-        }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .logo-section img {
-            width: 40px;
-            height: 40px;
-            filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.2;
-        }
-
-        .logo-text .domain-plus {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-shadow: 0 0 8px rgba(96, 165, 250, 0.75);
-        }
-
-        .logo-text .intl {
-            font-size: 0.9rem;
-            color: var(--accent);
-            text-shadow: 0 0 8px rgba(56, 189, 248, 0.75);
-        }
-
-        .nav-links {
-            display: none;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links li a {
-            color: var(--text-white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links li a:hover {
-            color: var(--neon-purple);
-            text-shadow: 0 0 10px var(--neon-purple);
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            padding: 0.75rem 1.6rem;
-            border: none;
-            border-radius: 10px;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 12px 30px rgba(56, 189, 248, 0.22);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .cta-button:hover {
-            box-shadow: 0 18px 45px rgba(56, 189, 248, 0.3);
-            transform: translateY(-2px);
-        }
-
-        @media (min-width: 1024px) {
-            .nav-links {
-                display: flex;
-            }
-        }
-
         /* Hero Section */
         .hero {
             padding: 4rem 2rem;
@@ -758,9 +665,7 @@
     <link rel="stylesheet" href="./styles/base.css" />
   </head>
 <body class="contact-page">
-    <main>
-        <!-- Navigation Header -->
-        <header class="site-header">
+    <header class="site-header">
   <div class="container header-container">
     <a class="logo" href="./index.html" aria-label="Domain-Plus home">
       <img src="./images/domain-plus log mod.png" alt="Domain Plus International Limited Logo" width="74" height="48" />
@@ -786,6 +691,7 @@
   </div>
 </header>
 
+    <main>
         <!-- Hero Section -->
         <section class="hero">
             <p class="hero-subtitle"><ion-icon name="chatbubbles-outline"></ion-icon> Contact Us</p>
