@@ -55,18 +55,49 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const markActiveNavigation = () => {
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const normalizeRoute = (value) => {
+      if (!value || value.startsWith("#")) {
+        return "";
+      }
+
+      try {
+        const url = new URL(value, window.location.origin);
+
+        if (url.origin !== window.location.origin) {
+          return "";
+        }
+
+        const route = url.pathname.replace(/\/+$/, "").replace(/\.html$/, "");
+
+        return !route || route === "/index" ? "/" : route;
+      } catch (_error) {
+        const route = value
+          .split("#")[0]
+          .split("?")[0]
+          .replace(/^\.\//, "")
+          .replace(/\/+$/, "")
+          .replace(/\.html$/, "");
+
+        if (!route || route === "index" || route === "/index") {
+          return "/";
+        }
+
+        return route.startsWith("/") ? route : `/${route}`;
+      }
+    };
+
+    const currentRoute = normalizeRoute(window.location.pathname) || "/";
+
     document
       .querySelectorAll(".main-nav a, .desktop-nav a, .nav-links a, .mobile-nav a")
       .forEach((link) => {
-        const href = link.getAttribute("href");
+        const linkRoute = normalizeRoute(link.getAttribute("href"));
 
-        if (!href || href.startsWith("#")) {
+        if (!linkRoute) {
           return;
         }
 
-        const linkPage = href.split("/").pop();
-        if (linkPage === currentPage || (currentPage === "" && linkPage === "index.html")) {
+        if (linkRoute === currentRoute) {
           link.setAttribute("aria-current", "page");
         }
       });
